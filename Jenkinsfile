@@ -1,11 +1,11 @@
 pipeline {
-    agent {lable "dev"} ;
+    agent {lable "dev"} ; 
 
     stages {
         stage("Code") {
             steps {
                 git url: "https://github.com/Amoomirr/Nginx-Docker.git", branch: "master"
-                echo "Code is clone"
+                echo "Code is cloned"
             }
         }
 
