@@ -3,40 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resume - Mohammed Amir</title>
+  <title>Mohammed Amir - Resume</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 20px auto;
       max-width: 900px;
-      line-height: 1.6;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: #fff;
       color: #222;
-      background: #fff;
+      line-height: 1.6;
     }
 
-    h1, h2 {
+    h1 {
       text-align: center;
       margin-bottom: 5px;
-    }
-
-    h2.section-title {
-      border-bottom: 1px solid #aaa;
-      padding-bottom: 4px;
-      margin-top: 30px;
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      color: #444;
     }
 
     .contact, .links {
       text-align: center;
       font-size: 0.95rem;
-      margin-bottom: 10px;
     }
 
-    .contact a, .links a {
+    a {
       color: #0073e6;
       text-decoration: none;
+    }
+
+    hr.section {
+      border: none;
+      border-top: 1px solid #aaa;
+      margin: 25px 0 10px;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
     }
 
     ul {
@@ -47,13 +50,15 @@
       margin-bottom: 6px;
     }
 
-    .job-title {
-      font-weight: bold;
-      display: block;
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .job {
       margin-top: 10px;
     }
 
-    .job-company {
+    .job-title {
       font-weight: bold;
     }
 
@@ -63,16 +68,12 @@
       color: #666;
     }
 
-    .project-link {
-      font-size: 0.95rem;
-    }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
     .clear {
       clear: both;
+    }
+
+    .project-links a {
+      margin-right: 10px;
     }
   </style>
 </head>
@@ -87,69 +88,77 @@
   </div>
 
   <div class="links">
-    <a href="https://github.com/Amoomir">GitHub: Amoomir</a> |
+    <a href="https://github.com/Amoomirr">GitHub: Amoomir</a> |
     <a href="http://linkedin.com/in/amirmohammed1282/">LinkedIn: amirmohammed1282</a>
   </div>
 
-  <h2 class="section-title">Profile Summary</h2>
+  <hr class="section" />
+  <h2>Profile Summary</h2>
   <p>
-    Aspiring Cloud Engineer with <strong>2 years of IT experience, skilled in infrastructure L1 monitoring and troubleshooting</strong>.
-    Took a career break to run a Shopify-based dropshipping store, gaining entrepreneurial and e-commerce exposure,
-    while <strong>actively upskilling in AWS Cloud and DevOps tools</strong> to transition into a cloud-based role.
+    Aspiring Cloud Engineer with <strong>2 years of IT experience, skilled in infrastructure L1 monitoring and troubleshooting</strong>. Took a career break to run a Shopify-based dropshipping store, gaining entrepreneurial and e-commerce exposure, while <strong>actively upskilling in AWS Cloud and DevOps tools</strong> to transition into a cloud-based role.
   </p>
 
-  <h2 class="section-title">Skills & Certifications</h2>
+  <hr class="section" />
+  <h2>Skills & Certifications</h2>
   <p>
-    <strong>Languages & Scripting:</strong> Python, Shell Script, YAML, JSON<br/>
-    <strong>Operating Systems:</strong> Linux, Windows<br/>
-    <strong>Tools:</strong> Docker, Kubernetes, GitHub, Jenkins CI/CD, Prometheus & Grafana<br/>
-    <strong>Protocols:</strong> RIP, EIGRP, OSPF, DNS, DHCP, TCP/IP, HTTP/HTTPS, SSH<br/>
-    <strong>Troubleshooting Commands:</strong> top, ps aux, journalctl, systemctl, ping, traceroute, df -h, lsblk, mount<br/>
-    <strong>Certifications:</strong> AWS Certified Cloud Practitioner (CLF-C02), CCNA<br/>
+    <strong>Languages & Scripting:</strong> Python, Shell Script, YAML, JSON<br>
+    <strong>Operating Systems:</strong> Linux, Windows<br>
+    <strong>Tools:</strong> Docker, Kubernetes, GitHub, Jenkins CI/CD, Prometheus & Grafana<br>
+    <strong>Protocols:</strong> RIP, EIGRP, OSPF, DNS, DHCP, TCP/IP, HTTP/HTTPS, SSH<br>
+    <strong>Troubleshooting Commands:</strong> top, ps aux, journalctl, systemctl, ping, traceroute, df -h, lsblk, mount<br>
+    <strong>Certifications:</strong> AWS Certified Cloud Practitioner (CLF-C02), CCNA<br>
     <strong>Courses:</strong> AWS CSA (Udemy), Python (Cisco), Docker & Kubernetes (KodeKloud)
   </p>
 
-  <h2 class="section-title">Work Experience</h2>
+  <hr class="section" />
+  <h2>Work Experience</h2>
 
-  <div class="section">
-    <span class="job-company">NTT DATA (Global Data & Cloud Infrastructure)</span>
-    <span class="date-location">Mar 2022 – Dec 2023, Airoli, Maharashtra</span>
+  <div class="job">
+    <div class="job-title">NTT DATA (Global Data & Cloud Infrastructure)</div>
+    <div class="date-location">Mar 2022 – Dec 2023, Airoli, Maharashtra</div>
     <div class="clear"></div>
-    <span class="job-title">MS Engineer Grade 3</span>
+    <em>MS Engineer Grade 3 (Initially via Viraj Infotech consultant, then on NTT payroll)</em>
     <ul>
-      <li>Tracked RBL Bank’s IT infrastructure using SolarWinds monitoring tool in <strong>24/7 rotational shifts</strong>, <strong>reducing unplanned downtime by 80%</strong> through early issue detection.</li>
-      <li>Oversaw IT operations across <strong>515+ branches</strong> and <strong>performed First Level Troubleshooting (FLT)</strong> on networking devices.</li>
-      <li><strong>Monitored 700+ servers</strong>, escalated business-impacting issues and reduced average response time by 50%.</li>
+      <li>Tracked RBL Bank’s IT infrastructure using SolarWinds in <strong>24/7 rotational shifts</strong>, reducing downtime by 80%.</li>
+      <li>Oversaw IT operations for <strong>515+ branches</strong>; performed FLT on networking devices and coordinated with ISPs.</li>
+      <li>Monitored <strong>700+ servers</strong>, prioritized workloads, and reduced average response time by 50%.</li>
     </ul>
   </div>
 
-  <div class="section">
-    <span class="job-company">Silicon Secure Pvt Ltd</span>
-    <span class="date-location">Sep 2021 – Feb 2022, Mumbai</span>
+  <div class="job">
+    <div class="job-title">Silicon Secure Pvt Ltd</div>
+    <div class="date-location">Sep 2021 – Feb 2022, Mumbai</div>
     <div class="clear"></div>
-    <span class="job-title">Network Engineer</span>
+    <em>Network Engineer</em>
     <ul>
-      <li><strong>Managed 120+ Cisco L2/L3 switches</strong> using Cisco Prime Infrastructure.</li>
-      <li>Performed configuration backups, replaced faulty PoE devices, and secured racks.</li>
-      <li>Enabled <strong>MAC binding</strong> and disabled unused ports to <strong>enhance network security by 99%</strong>.</li>
+      <li>Managed over <strong>120 Cisco L2/L3 switches</strong> of Tata Communications using Cisco Prime Infrastructure.</li>
+      <li>Performed configuration backups, replaced PoE devices, and restored switches in secure racks.</li>
+      <li>Improved security by enabling <strong>MAC binding</strong> and disabling unused ports.</li>
     </ul>
   </div>
 
-  <h2 class="section-title">Cloud Projects</h2>
+  <hr class="section" />
+  <h2>Cloud Projects</h2>
   <ul>
-    <li><strong>Hosted Static Website on Amazon S3</strong> — <a class="project-link" href="http://amir-static-website-project.s3-website.ap-south-1.amazonaws.com/">Live Demo</a> |
-      <a class="project-link" href="https://github.com/Amoomirr/static_website_hosted_on_s3">GitHub</a><br/>
-      Deployed a static website and configured <strong>IAM user with upload-only access</strong> based on the Principle of Least Privilege.
+    <li>
+      <strong>Hosted Static Website on Amazon S3</strong> —
+      <span class="project-links">
+        <a href="http://amir-static-website-project.s3-website.ap-south-1.amazonaws.com/">Demo</a>
+        <a href="https://github.com/Amoomirr/static_website_hosted_on_s3">GitHub</a>
+      </span><br>
+      Deployed a public website and assigned a <strong>dedicated IAM user</strong> with upload-only permissions using Least Privilege.
     </li>
-    <li><strong>VPC Peering for Cross-Region Communication</strong> —
-      <a class="project-link" href="https://github.com/Amoomirr/VPC-Peering-Cross-Region">GitHub</a><br/>
-      Created VPCs in different regions and enabled private EC2 communication using peering, subnets, route tables, NACLs, and IGW.
+    <li>
+      <strong>VPC Peering for Cross-Region Communication</strong> —
+      <a href="https://github.com/Amoomirr/VPC-Peering-Cross-Region">GitHub</a><br>
+      Created isolated VPCs across AWS regions, configured subnets, route tables, NACLs, IGW, and tested connectivity via ping/SSH.
     </li>
   </ul>
 
-  <h2 class="section-title">Education</h2>
+  <hr class="section" />
+  <h2>Education</h2>
   <p>
-    <strong>Tilak Maharashtra Vidyapeeth, Pune</strong><br/>
+    <strong>Tilak Maharashtra Vidyapeeth, Pune</strong><br>
     Bachelor of Computer Applications (2016 – 2019) — <strong>A+ Grade</strong>
   </p>
 
