@@ -2,6 +2,6 @@ version: '3.8'
 
 services:
   nginx-app:
-    build: .
+    image : amoomirr/my-nginx-app
     ports:
       - "80:80"
