@@ -11,11 +11,13 @@ pipeline {
             }
         }
 
-        stage("trivy scan") {
+        stage("Trivy Scan") {
             steps {
-                // Scan the local filesystem for vulnerabilities using Trivy
+               script 
+                { // Scan the local filesystem for vulnerabilities using Trivy
                 sh "trivy fs . -o trivy-results.json"
                 echo "Trivy scan completed"
+                }
             }
         }
 
