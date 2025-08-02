@@ -16,7 +16,7 @@ pipeline {
                script 
                 { // Scan the local filesystem for vulnerabilities using Trivy
                 sh "trivy fs . -o trivy-results.json"
-                echo "Trivy scan completed"
+                echo "Trivy scan completed and saved"
                 }
             }
         }
