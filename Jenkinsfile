@@ -1,47 +1,56 @@
 pipeline {
-    agent {label "dev"} ; 
+    agent { label "dev" }  // Use the agent labeled 'dev'
 
     stages {
+
         stage("Code") {
             steps {
-                git url: "https://github.com/Amoomirr/Nginx-Docker.git", branch: "master"  #clones url from the github to my agent
-                echo "Code is cloned"
+                // Clone the repository from GitHub
+                git url: "https://github.com/Amoomirr/Nginx-Docker.git", branch: "master"
+                echo "Code cloned from GitHub"
             }
         }
-        stages {
-            stage("Trivy Scan")
-            {
-                steps {
-                    sh "trivy fs . -o results json" #it scans and save any vulnerabilities found
-                }
+
+        stage("trivy scan") {
+            steps {
+                // Scan the local filesystem for vulnerabilities using Trivy
+                sh "trivy fs . -o trivy-results.json"
+                echo "Trivy scan completed"
             }
         }
 
         stage("Build") {
             steps {
                 script {
-                    sh "docker build -t my-nginx-app ." # builds the image from dockerfile
-                    echo "Code is build"
+                    // Build Docker image from Dockerfile
+                    sh "docker build -t my-nginx-app ."
+                    echo "Docker image built successfully"
                 }
             }
         }
-        stage("Test"){
-            steps{
-                script{
-                    echo "Testing" #testcode will be given by developer
+
+        stage("Test") {
+            steps {
+                script {
+                    // Placeholder for test scripts to be implemented by developers
+                    echo "Running test scripts (to be implemented)"
                 }
             }
         }
-        stage("Push"){
-            steps{
-                script{
-                    withCredentials([usernamePassword(credentialsId: "dockerhubid", #uses dockerhub credentials which we created and saved_in_jenkins
-                    usernameVariable: "dockeruser", #passed the value of credentials to the variable 
-                    passwordVariable: "dockerpasswd")]){
-                        sh "docker login -u ${env.dockeruser} -p ${env.dockerpasswd}" #login to our dockerhub account
-                        sh "docker image tag my-nginx-app ${env.dockeruser}/my-nginx-app" #creates a tag to our image from_build_stage
-                        sh "docker push ${env.dockeruser}/my-nginx-app:latest" #push the image to dockerhub
-                    echo "Code is Pushed to DockerHub"
+
+        stage("Push") {
+            steps {
+                script {
+                    // Authenticate and push Docker image to DockerHub
+                    withCredentials([usernamePassword(
+                        credentialsId: "dockerhubid",
+                        usernameVariable: "dockeruser",
+                        passwordVariable: "dockerpasswd"
+                    )]) {
+                        sh "docker login -u ${dockeruser} -p ${dockerpasswd}"
+                        sh "docker image tag my-nginx-app ${dockeruser}/my-nginx-app:latest"
+                        sh "docker push ${dockeruser}/my-nginx-app:latest"
+                        echo "Docker image pushed to DockerHub"
                     }
                 }
             }
@@ -50,10 +59,12 @@ pipeline {
         stage("Deploy") {
             steps {
                 script {
-                    sh "docker compose up --build -d" #Used to build container and was specially used for_port mapping which can also be done by dockerfile but_as it is CI/CD we dont want port already exist error.
-                    echo "Code is Deployed and working"
+                    // Deploy the application using Docker Compose
+                    sh "docker compose up --build -d"
+                    echo "Application deployed successfully"
                 }
             }
         }
+
     }
 }
